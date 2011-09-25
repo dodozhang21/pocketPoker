@@ -2,8 +2,6 @@ function shuffle(arr) {
 	for(var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
 	return arr;
 }
-var Suits = ['spades', 'clubs', 'hearts', 'diamonds'];
-var Numbers = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
 var Deck = function() {
 	this.cards = [];
