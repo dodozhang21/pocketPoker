@@ -1,12 +1,42 @@
-////shuffles list in-place
-//function shuffle(list) {
-//  var i, j, t;
-//  for (i = 1; i < list.length; i++) {
-//    j = Math.floor(Math.random()*(1+i));  // choose j in [0..i]
-//    if (j != i) {
-//      t = list[i];                        // swap list[i] and list[j]
-//      list[i] = list[j];
-//      list[j] = t;
-//    }
-//  }
-//}
+function shuffle(arr) {
+	for(var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
+	return arr;
+}
+var Suits = ['spades', 'clubs', 'hearts', 'diamonds'];
+var Numbers = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+
+var Deck = function() {
+	this.cards = [];
+	// initialize cards
+	for(sIndex in Suits) {
+		var suit = Suits[sIndex];
+		for(nIndex in Numbers) {
+			var number = Numbers[nIndex];
+			this.cards.push(new Card(number, suit));
+		}
+	}
+};
+
+Deck.prototype = {
+
+    getCards : function() {
+        return this.cards;
+    },
+    
+    shuffle : function() {
+    	var currentCards = this.cards;
+    	this.cards = [];
+		this.cards = shuffle(currentCards);
+    },
+    
+    deal : function(numberOfCards) {
+    	var cardsToDeal = [];
+    	if(this.cards.length >= numberOfCards) {
+        	for(var i = 0; i < numberOfCards; i++) {
+        		cardsToDeal.push(this.cards.pop());
+        	}
+    	}
+    	return cardsToDeal;
+    }
+
+};

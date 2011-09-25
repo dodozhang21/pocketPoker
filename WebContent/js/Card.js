@@ -5,7 +5,7 @@ var Card = function(number, suit) {
 
 Card.prototype = {
 
-    imgSrc : function() {
+    getImgSrc : function() {
         return this.number + '_' + this.suit;
     }
 

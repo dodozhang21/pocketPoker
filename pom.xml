@@ -62,7 +62,7 @@
                          this will launch your default browser -->
                     <browser>C:\Program Files\Internet Explorer\iexplore.exe</browser>
 <!--                     <browser>C:\Program Files\Internet Explorer\iexplore.exe, C:\Program Files (x86)\Mozilla Firefox\firefox.exe</browser> -->
-					<config>WebContent/js/test/resources/jsTestDriver.conf</config>
+					<config>jsTestDriver.conf</config>
                     <port>${server.port}</port>
                     <testOutput>target/jsTestDriver</testOutput>
                 </configuration>
