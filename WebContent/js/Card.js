@@ -12,6 +12,14 @@ Card.prototype = {
     getImgSrc : function() {
     	var display = NumberDisplays[this.number];
         return display + '_' + this.suit;
+    },
+    
+    getNumber : function() {
+    	return this.number;
+    },
+    
+    getSuit : function() {
+    	return this.suit;
     }
 
 };

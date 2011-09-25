@@ -26,5 +26,30 @@ TestCase('GameTest', {
         	return card.getImgSrc();
         });
         assertEquals('Sorted should be correct.', sortedShouldBe, sortedDisplays);
+    },
+    
+    testIsFlush : function() {
+    	var game = new Game();
+    	assertTrue("Should be flush.", game.isFlush(['diamonds', 'diamonds', 'diamonds']));
+    	assertFalse("Should not be flush.", game.isFlush(['diamonds', 'hearts', 'diamonds', 'diamonds', 'clubs']));
+    },
+    
+    testIsFourOfAKind : function() {
+    	var game = new Game();
+    	assertTrue("Should be four of a kind.", game.isFourOfAKind([2, 2, 4, 2, 2]));
+    	assertFalse("Should not be four of a kind.", game.isFourOfAKind([2, 2, 4, 3, 2]));
+    },
+    
+    testIsThreeOfAKind : function() {
+    	var game = new Game();
+    	assertTrue("Should be three of a kind.", game.isThreeOfAKind([2, 2, 4, 8, 2]));
+    	assertFalse("Should not be three of a kind.", game.isThreeOfAKind([2, 2, 4, 3, 11]));
+    },
+    
+    testIsStraight : function() {
+    	var game = new Game();
+    	assertTrue("Should be a straight.", game.isStraight([2, 3, 4, 5, 6]));
+    	assertTrue("Should be a straight.", game.isStraight([7, 8, 9, 10, 11]));
+    	assertFalse("Should not be a straight.", game.isStraight([7, 8, 2, 10, 11]));
     }
 });

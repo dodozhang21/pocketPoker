@@ -1,8 +1,3 @@
-function shuffle(arr) {
-	for(var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
-	return arr;
-}
-
 var Deck = function() {
 	this.cards = [];
 	// initialize cards
@@ -23,8 +18,7 @@ Deck.prototype = {
     
     shuffle : function() {
     	var currentCards = this.cards;
-    	this.cards = [];
-		this.cards = shuffle(currentCards);
+    	this.cards = currentCards.randomize();
     },
     
     deal : function(numberOfCards) {
