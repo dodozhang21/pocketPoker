@@ -30,18 +30,11 @@
 	
 	<dependencies>
 		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>2.4</version>
-		</dependency>
-	
-		<dependency>
 			<groupId>com.googlecode.jstd-maven-plugin</groupId>
 			<artifactId>jstd-maven-plugin</artifactId>
 			<version>${jstd.version}</version>
 			<scope>test</scope>
 		</dependency>
-	
 	</dependencies>
 	
 	
@@ -64,11 +57,14 @@
                 <version>${jstd.version}</version>
                 <configuration>
                     <verbose>true</verbose>
+<!--                     <server>http://localhost:9876</server> -->
                     <!-- You might need to adjust this depending on your OS.  On Mac,
                          this will launch your default browser -->
                     <browser>C:\Program Files\Internet Explorer\iexplore.exe</browser>
+<!--                     <browser>C:\Program Files\Internet Explorer\iexplore.exe, C:\Program Files (x86)\Mozilla Firefox\firefox.exe</browser> -->
 					<config>WebContent/js/test/resources/jsTestDriver.conf</config>
                     <port>${server.port}</port>
+                    <testOutput>target/jsTestDriver</testOutput>
                 </configuration>
                 <executions>
                     <execution>
