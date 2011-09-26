@@ -59,7 +59,15 @@ Game.prototype = {
     },
     
     isFullHouse : function(sortedNumbers) {
-    	return false;
+    	var numberOfRepeatedElements = [];
+    	for(var i in sortedNumbers) {
+    		var number = sortedNumbers[i];
+    		var occurrences = sortedNumbers.filter(number);
+    		numberOfRepeatedElements.push(occurrences.length);
+    	}
+    	
+    	return numberOfRepeatedElements.filter(2).length == 2
+    			&& numberOfRepeatedElements.filter(3).length == 3;
     },
     
     isFlush : function(suits) {
@@ -89,17 +97,7 @@ Game.prototype = {
     		numberOfRepeatedElements.push(occurrences.length);
     	}
     	// at least 4 elements have 2
-    	var elementsRepeatedTwice = 0;
-    	for(var i in numberOfRepeatedElements) {
-    		var repeatedElement = numberOfRepeatedElements[i];
-//    		console.log('repeatedElement='+repeatedElement);
-    		if(repeatedElement == 2) {
-    			elementsRepeatedTwice++;
-    		}
-    	}
-//    	console.log('elementsWithTwo='+elementsRepeatedTwice);
-//    	console.log(numberOfRepeatedElements);
-    	return elementsRepeatedTwice >= 4;
+    	return numberOfRepeatedElements.filter(2).length == 4;
     },
     
     isJacksOrBetter : function(sortedNumbers) {

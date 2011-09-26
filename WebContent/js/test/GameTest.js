@@ -64,5 +64,11 @@ TestCase('GameTest', {
     	var game = new Game();
     	assertTrue("Should be two pairs.", game.isTwoPair([2, 2, 5, 5, 6]));
     	assertFalse("Should not be two pairs.", game.isTwoPair([7, 8, 2, 10, 3]));
+    },
+    
+    testIsFullHouse : function() {
+    	var game = new Game();
+    	assertTrue("Should be full house.", game.isFullHouse([2, 2, 6, 6, 6]));
+    	assertFalse("Should not be full house.", game.isFullHouse([7, 8, 2, 10, 3]));
     }
 });
