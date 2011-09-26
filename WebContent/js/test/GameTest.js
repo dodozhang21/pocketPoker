@@ -44,6 +44,7 @@ TestCase('GameTest', {
     	var game = new Game();
     	assertTrue("Should be three of a kind.", game.isThreeOfAKind([2, 2, 4, 8, 2]));
     	assertFalse("Should not be three of a kind.", game.isThreeOfAKind([2, 2, 4, 3, 11]));
+    	assertFalse("Should not be three of a kind.", game.isThreeOfAKind([2, 2, 3, 3, 2])); // <-- should be full house
     },
     
     testIsStraight : function() {
@@ -51,5 +52,17 @@ TestCase('GameTest', {
     	assertTrue("Should be a straight.", game.isStraight([2, 3, 4, 5, 6]));
     	assertTrue("Should be a straight.", game.isStraight([7, 8, 9, 10, 11]));
     	assertFalse("Should not be a straight.", game.isStraight([7, 8, 2, 10, 11]));
+    },
+    
+    testIsJacksOrBetter : function() {
+    	var game = new Game();
+    	assertTrue("Should be jacks or better.", game.isJacksOrBetter([2, 3, 11, 5, 6]));
+    	assertFalse("Should not be jacks or better.", game.isJacksOrBetter([7, 8, 2, 10, 3]));
+    },
+    
+    testIsTwoPair : function() {
+    	var game = new Game();
+    	assertTrue("Should be two pairs.", game.isTwoPair([2, 2, 5, 5, 6]));
+    	assertFalse("Should not be two pairs.", game.isTwoPair([7, 8, 2, 10, 3]));
     }
 });

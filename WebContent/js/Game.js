@@ -81,10 +81,34 @@ Game.prototype = {
     },
     
     isTwoPair : function(sortedNumbers) {
-    	return false;
+    	var numberOfRepeatedElements = [];
+    	for(var i in sortedNumbers) {
+    		var number = sortedNumbers[i];
+    		var occurrences = sortedNumbers.filter(number);
+//    		console.log('number='+number+',occurrences='+occurrences);
+    		numberOfRepeatedElements.push(occurrences.length);
+    	}
+    	// at least 4 elements have 2
+    	var elementsRepeatedTwice = 0;
+    	for(var i in numberOfRepeatedElements) {
+    		var repeatedElement = numberOfRepeatedElements[i];
+//    		console.log('repeatedElement='+repeatedElement);
+    		if(repeatedElement == 2) {
+    			elementsRepeatedTwice++;
+    		}
+    	}
+//    	console.log('elementsWithTwo='+elementsRepeatedTwice);
+//    	console.log(numberOfRepeatedElements);
+    	return elementsRepeatedTwice >= 4;
     },
     
     isJacksOrBetter : function(sortedNumbers) {
+    	for(var i in sortedNumbers) {
+    		var number = sortedNumbers[i];
+    		if(number >= 11) {
+    			return true;
+    		}
+    	}
     	return false;
     },
     
