@@ -15,11 +15,11 @@ TestCase('GameTest', {
         
         assertEquals('Should have the same length', original.length, sorted.length);
 
-        var originalhouldBe = ['2_spades', 'J_diamonds', '3_diamonds', '8_hearts', '4_clubs'];
+        var originalShouldBe = ['2_spades', 'J_diamonds', '3_diamonds', '8_hearts', '4_clubs'];
         var originalDisplays = jQuery.map(original, function(card){
         	return card.getImgSrc();
         });
-        assertEquals('Original should be untouched.', originalhouldBe, originalDisplays);
+        assertEquals('Original should be untouched.', originalShouldBe, originalDisplays);
         
         var sortedShouldBe = ['2_spades', '3_diamonds', '4_clubs', '8_hearts', 'J_diamonds'];
         var sortedDisplays = jQuery.map(sorted, function(card){
