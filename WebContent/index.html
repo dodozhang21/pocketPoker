@@ -1,1 +1,92 @@
-hello world
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pocket Poker</title>
+	<link rel="stylesheet"  href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	
+	<!-- defining element global vars since they are tied to the HTML -->
+	<script>
+
+	</script>
+	
+	<!-- js -->
+<!-- 	<script src="triggerYield/constants.js"></script> -->
+<!-- 	<script src="triggerYield/triggerYieldFunctions.js"></script> -->
+	
+	<script>
+	$(document).bind('mobileinit', function(){
+		$.mobile.selectmenu.prototype.options.nativeMenu = false;
+		$.mobile.selectmenu.prototype.options.hidePlaceholderMenuItems = false;
+	});
+	</script>
+	
+	<script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
+	
+	<script>
+	$(document).ready(function() {
+		$('#calculate').live("click", function() {
+			console.log('submitted');
+			return false;
+		});
+	});
+	</script>
+</head> 
+<body> 
+	<form data-ajax="false" action="#" method="post" id="triggerYieldForm">
+	
+		<div data-role="fieldcontain">
+			<label for="crop" class="select">Select Crop:</label>
+			<select name="crop" id="crop">
+				<option value="" data-placeholder="true"></option>
+				<option value="Barley">Barley</option>
+				<option value="Canola">Canola</option>
+				<option value="Corn">Corn</option>
+				<option value="Cotton">Cotton</option>
+				<option value="Grain Sorghum">Grain Sorghum</option>
+				<option value="Rice">Rice</option>
+				<option value="Sunflowers">Sunflowers</option>
+				<option value="Soybean">Soybean</option>
+				<option value="Wheat">Wheat</option>
+			</select>
+		</div>
+		
+		<div data-role="fieldcontain">
+			<label for="plan" class="select">Select Plan:</label>
+			<select name="plan" id="plan">
+				<option value="" data-placeholder="true"></option>
+				<option value="02">Revenue Protection</option>
+				<option value="03">Revenue Protection w/Harvest Price Exclusion</option>
+			</select>
+		</div>
+		
+		<div data-role="fieldcontain">
+			<label for="aph" class="select">Select APH:</label>
+			<select name="aph" id="aph">
+				<option value="" data-placeholder="true">Increments</option>
+				<option value="1">1</option>
+				<option value="5">5</option>
+				<option value="10">10</option>
+			</select>
+		</div>
+		
+		<div data-role="fieldcontain">
+		    <label for="basePrice">Base Price:</label>
+		    <input type="text" name="basePrice" id="basePrice" value=""  />
+		</div>
+		
+		<div data-role="fieldcontain">
+		    <label for="harvestPrice">Harvest Price:</label>
+		    <input type="text" name="harvestPrice" id="harvestPrice" value=""  />
+		</div>
+		
+		<fieldset class="ui-grid-a">
+			<div class="ui-block-a"><button type="submit" data-theme="b" id="calculate">Calculate</button></div>	   
+			<div class="ui-block-b"><button type="submit" data-theme="c" id="reset">Reset</button></div>
+		</fieldset>
+	
+	</form>
+</body>
+</html>

@@ -1,3 +1,12 @@
+-- back bone jQuery mobile
+http://bennolan.com/2010/11/24/backbone-jquery-demo.html
+
+-- back bone jQuery example:
+http://andyet.net/blog/2010/oct/29/building-a-single-page-app-with-backbonejs-undersc/
+
+-- back bone testing with Jasmine
+http://tinnedfruit.com/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html
+
 http://blog.davidpadbury.com/2010/10/11/bdd-testing-of-jquery-plugins-using-jasmine/
 http://testdrivenwebsites.com/2010/08/04/custom-jquery-matchers-in-jasmine/
 http://stackoverflow.com/questions/4662641/how-do-i-verify-jquery-ajax-events-with-jasmine
